@@ -29,21 +29,28 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   bloc: ^8.1.4
+  build_runner: ^2.4.10
+  convex_bottom_bar: ^3.2.0
   cupertino_icons: ^1.0.6
   dio: ^5.4.3+1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
   flutter_custom_clippers: ^2.1.0
-  go_router: ^14.1.2
+  fluttertoast: ^8.2.5
+  freezed_annotation: ^2.4.1
+  go_router: ^14.1.4
   google_fonts: ^6.2.1
   hexcolor: ^3.0.1
+  json_annotation: ^4.9.0
   shared_preferences: ^2.2.3
 
 dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  freezed: ^2.5.2
+  json_serializable: ^6.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

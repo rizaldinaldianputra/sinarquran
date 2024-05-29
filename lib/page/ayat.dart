@@ -3,21 +3,28 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:quransinar/constant/colors.dart';
+import 'package:quransinar/model/surah.dart';
+import 'package:quransinar/service/surah_serice.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({super.key});
+class AyatPage extends StatefulWidget {
+  const AyatPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<AyatPage> createState() => _AyatPageState();
 }
 
 late TabController _tabController;
 
-class _HomePageState extends State<HomePage>
+class _AyatPageState extends State<AyatPage>
     with SingleTickerProviderStateMixin {
+  late SurahSerice surahSerice;
+  List<Surah> listSurah = [];
+
   @override
   void initState() {
+    surahSerice = SurahSerice(context);
     _tabController = TabController(length: 2, vsync: this);
+    getDataSurah();
     super.initState();
   }
 
@@ -30,6 +37,7 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -76,7 +84,7 @@ class _HomePageState extends State<HomePage>
                       Text(
                         'Rizaldi Naldian Putra',
                         style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w400,
                             color: Colors.white,
                             fontSize: 20),
                       )
@@ -146,82 +154,39 @@ class _HomePageState extends State<HomePage>
               SizedBox(
                 height: 20,
               ),
-              TabBar(
-                controller: _tabController,
-                indicatorColor: HexColor('994EF8'),
-                labelColor: Colors.white, // Warna teks tab saat diaktifkan
-                unselectedLabelColor: Colors.grey,
-                tabs: [
-                  Tab(
-                    text: 'Tab 1',
-                  ),
-                  Tab(text: 'Tab 2'),
-                  Tab(
-                    text: 'Tab 1',
-                  ),
-                  Tab(text: 'Tab 2'),
-                ],
-              ),
               Container(
-                height: 400,
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    ListView.builder(
-                      itemCount: 20,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          trailing: Text('A'.toString(),
-                              style: TextStyle(
-                                  color: secondaryColor, fontSize: 20)),
-                          title: Text('alfatihaah'.toString(),
-                              style: GoogleFonts.poppins(
-                                  color: Colors.white, fontSize: 20)),
-                          subtitle: Text('Ayat - 01'.toString(),
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16)),
-                          leading: ClipPath(
-                            clipper: StarClipper(8),
-                            child: Container(
-                              width: 40,
-                              height: 40,
-                              color: secondaryColor,
-                              child: Center(
-                                  child: Text(
-                                index.toString(),
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 16),
-                              )),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                    ListView.builder(
-                      itemCount: 20,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Text('Item $index'),
-                        );
-                      },
-                    ),
-                    ListView.builder(
-                      itemCount: 20,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Text('Item $index'),
-                        );
-                      },
-                    ),
-                    ListView.builder(
-                      itemCount: 15,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Text('Item ${index + 20}'),
-                        );
-                      },
-                    ),
-                  ],
+                height: 340,
+                margin: EdgeInsets.all(3),
+                child: ListView.builder(
+                  itemCount: listSurah.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      trailing: Text(listSurah[index].nama.toString(),
+                          style:
+                              TextStyle(color: secondaryColor, fontSize: 20)),
+                      title: Text(
+                          listSurah[index].namaLatin.toString() +
+                              ' ' +
+                              listSurah[index].jumlahAyat.toString(),
+                          style: GoogleFonts.poppins(
+                              color: Colors.white, fontSize: 20)),
+                      subtitle: Text(listSurah[index].tempatTurun.toString(),
+                          style: TextStyle(color: Colors.white, fontSize: 16)),
+                      leading: ClipPath(
+                        clipper: StarClipper(8),
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          color: secondaryColor,
+                          child: Center(
+                              child: Text(
+                            index.toString(),
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          )),
+                        ),
+                      ),
+                    );
+                  },
                 ),
               )
             ],
@@ -229,5 +194,11 @@ class _HomePageState extends State<HomePage>
         ),
       ),
     );
+  }
+
+  void getDataSurah() async {
+    final x = await surahSerice.findAllSurah();
+    listSurah = x;
+    setState(() {});
   }
 }

@@ -1,12 +1,24 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum ThemeMode { light, dark }
+class ThemeCubit extends Cubit<ThemeData> {
+  ThemeCubit() : super(_lightTheme);
 
-class ThemeCubit extends Cubit<ThemeMode> {
-  ThemeCubit() : super(ThemeMode.light);
+  static final _lightTheme = ThemeData(
+    brightness: Brightness.light,
+    primarySwatch: Colors.blue,
+  );
+
+  static final _darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    primarySwatch: Colors.blue,
+  );
 
   void toggleTheme() {
-    emit(state == ThemeMode.light ? ThemeMode.dark : ThemeMode.light);
+    if (state.brightness == Brightness.dark) {
+      emit(_lightTheme);
+    } else {
+      emit(_darkTheme);
+    }
   }
 }
