@@ -20,16 +20,16 @@ Surah _$SurahFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Surah {
-  int get nomor => throw _privateConstructorUsedError;
-  String get nama => throw _privateConstructorUsedError;
-  String get namaLatin => throw _privateConstructorUsedError;
-  int get jumlahAyat => throw _privateConstructorUsedError;
-  String get tempatTurun => throw _privateConstructorUsedError;
-  String get arti => throw _privateConstructorUsedError;
-  String get deskripsi => throw _privateConstructorUsedError;
-  List<Ayat> get ayat => throw _privateConstructorUsedError;
-  SurahNext get suratSelanjutnya => throw _privateConstructorUsedError;
-  bool get suratSebelumnya => throw _privateConstructorUsedError;
+  int? get nomor => throw _privateConstructorUsedError;
+  String? get nama => throw _privateConstructorUsedError;
+  String? get nama_latin => throw _privateConstructorUsedError;
+  int get jumlah_ayat => throw _privateConstructorUsedError;
+  String? get tempat_turun => throw _privateConstructorUsedError;
+  String? get arti => throw _privateConstructorUsedError;
+  String? get deskripsi => throw _privateConstructorUsedError;
+  List<Ayat>? get ayat => throw _privateConstructorUsedError;
+  SurahSelanjutnya? get suratSelanjutnya => throw _privateConstructorUsedError;
+  bool? get suratSebelumnya => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,18 +42,18 @@ abstract class $SurahCopyWith<$Res> {
       _$SurahCopyWithImpl<$Res, Surah>;
   @useResult
   $Res call(
-      {int nomor,
-      String nama,
-      String namaLatin,
-      int jumlahAyat,
-      String tempatTurun,
-      String arti,
-      String deskripsi,
-      List<Ayat> ayat,
-      SurahNext suratSelanjutnya,
-      bool suratSebelumnya});
+      {int? nomor,
+      String? nama,
+      String? nama_latin,
+      int jumlah_ayat,
+      String? tempat_turun,
+      String? arti,
+      String? deskripsi,
+      List<Ayat>? ayat,
+      SurahSelanjutnya? suratSelanjutnya,
+      bool? suratSebelumnya});
 
-  $SurahNextCopyWith<$Res> get suratSelanjutnya;
+  $SurahSelanjutnyaCopyWith<$Res>? get suratSelanjutnya;
 }
 
 /// @nodoc
@@ -69,65 +69,69 @@ class _$SurahCopyWithImpl<$Res, $Val extends Surah>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nomor = null,
-    Object? nama = null,
-    Object? namaLatin = null,
-    Object? jumlahAyat = null,
-    Object? tempatTurun = null,
-    Object? arti = null,
-    Object? deskripsi = null,
-    Object? ayat = null,
-    Object? suratSelanjutnya = null,
-    Object? suratSebelumnya = null,
+    Object? nomor = freezed,
+    Object? nama = freezed,
+    Object? nama_latin = freezed,
+    Object? jumlah_ayat = null,
+    Object? tempat_turun = freezed,
+    Object? arti = freezed,
+    Object? deskripsi = freezed,
+    Object? ayat = freezed,
+    Object? suratSelanjutnya = freezed,
+    Object? suratSebelumnya = freezed,
   }) {
     return _then(_value.copyWith(
-      nomor: null == nomor
+      nomor: freezed == nomor
           ? _value.nomor
           : nomor // ignore: cast_nullable_to_non_nullable
-              as int,
-      nama: null == nama
+              as int?,
+      nama: freezed == nama
           ? _value.nama
           : nama // ignore: cast_nullable_to_non_nullable
-              as String,
-      namaLatin: null == namaLatin
-          ? _value.namaLatin
-          : namaLatin // ignore: cast_nullable_to_non_nullable
-              as String,
-      jumlahAyat: null == jumlahAyat
-          ? _value.jumlahAyat
-          : jumlahAyat // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nama_latin: freezed == nama_latin
+          ? _value.nama_latin
+          : nama_latin // ignore: cast_nullable_to_non_nullable
+              as String?,
+      jumlah_ayat: null == jumlah_ayat
+          ? _value.jumlah_ayat
+          : jumlah_ayat // ignore: cast_nullable_to_non_nullable
               as int,
-      tempatTurun: null == tempatTurun
-          ? _value.tempatTurun
-          : tempatTurun // ignore: cast_nullable_to_non_nullable
-              as String,
-      arti: null == arti
+      tempat_turun: freezed == tempat_turun
+          ? _value.tempat_turun
+          : tempat_turun // ignore: cast_nullable_to_non_nullable
+              as String?,
+      arti: freezed == arti
           ? _value.arti
           : arti // ignore: cast_nullable_to_non_nullable
-              as String,
-      deskripsi: null == deskripsi
+              as String?,
+      deskripsi: freezed == deskripsi
           ? _value.deskripsi
           : deskripsi // ignore: cast_nullable_to_non_nullable
-              as String,
-      ayat: null == ayat
+              as String?,
+      ayat: freezed == ayat
           ? _value.ayat
           : ayat // ignore: cast_nullable_to_non_nullable
-              as List<Ayat>,
-      suratSelanjutnya: null == suratSelanjutnya
+              as List<Ayat>?,
+      suratSelanjutnya: freezed == suratSelanjutnya
           ? _value.suratSelanjutnya
           : suratSelanjutnya // ignore: cast_nullable_to_non_nullable
-              as SurahNext,
-      suratSebelumnya: null == suratSebelumnya
+              as SurahSelanjutnya?,
+      suratSebelumnya: freezed == suratSebelumnya
           ? _value.suratSebelumnya
           : suratSebelumnya // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SurahNextCopyWith<$Res> get suratSelanjutnya {
-    return $SurahNextCopyWith<$Res>(_value.suratSelanjutnya, (value) {
+  $SurahSelanjutnyaCopyWith<$Res>? get suratSelanjutnya {
+    if (_value.suratSelanjutnya == null) {
+      return null;
+    }
+
+    return $SurahSelanjutnyaCopyWith<$Res>(_value.suratSelanjutnya!, (value) {
       return _then(_value.copyWith(suratSelanjutnya: value) as $Val);
     });
   }
@@ -141,19 +145,19 @@ abstract class _$$SurahImplCopyWith<$Res> implements $SurahCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int nomor,
-      String nama,
-      String namaLatin,
-      int jumlahAyat,
-      String tempatTurun,
-      String arti,
-      String deskripsi,
-      List<Ayat> ayat,
-      SurahNext suratSelanjutnya,
-      bool suratSebelumnya});
+      {int? nomor,
+      String? nama,
+      String? nama_latin,
+      int jumlah_ayat,
+      String? tempat_turun,
+      String? arti,
+      String? deskripsi,
+      List<Ayat>? ayat,
+      SurahSelanjutnya? suratSelanjutnya,
+      bool? suratSebelumnya});
 
   @override
-  $SurahNextCopyWith<$Res> get suratSelanjutnya;
+  $SurahSelanjutnyaCopyWith<$Res>? get suratSelanjutnya;
 }
 
 /// @nodoc
@@ -167,58 +171,58 @@ class __$$SurahImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nomor = null,
-    Object? nama = null,
-    Object? namaLatin = null,
-    Object? jumlahAyat = null,
-    Object? tempatTurun = null,
-    Object? arti = null,
-    Object? deskripsi = null,
-    Object? ayat = null,
-    Object? suratSelanjutnya = null,
-    Object? suratSebelumnya = null,
+    Object? nomor = freezed,
+    Object? nama = freezed,
+    Object? nama_latin = freezed,
+    Object? jumlah_ayat = null,
+    Object? tempat_turun = freezed,
+    Object? arti = freezed,
+    Object? deskripsi = freezed,
+    Object? ayat = freezed,
+    Object? suratSelanjutnya = freezed,
+    Object? suratSebelumnya = freezed,
   }) {
     return _then(_$SurahImpl(
-      nomor: null == nomor
+      nomor: freezed == nomor
           ? _value.nomor
           : nomor // ignore: cast_nullable_to_non_nullable
-              as int,
-      nama: null == nama
+              as int?,
+      nama: freezed == nama
           ? _value.nama
           : nama // ignore: cast_nullable_to_non_nullable
-              as String,
-      namaLatin: null == namaLatin
-          ? _value.namaLatin
-          : namaLatin // ignore: cast_nullable_to_non_nullable
-              as String,
-      jumlahAyat: null == jumlahAyat
-          ? _value.jumlahAyat
-          : jumlahAyat // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nama_latin: freezed == nama_latin
+          ? _value.nama_latin
+          : nama_latin // ignore: cast_nullable_to_non_nullable
+              as String?,
+      jumlah_ayat: null == jumlah_ayat
+          ? _value.jumlah_ayat
+          : jumlah_ayat // ignore: cast_nullable_to_non_nullable
               as int,
-      tempatTurun: null == tempatTurun
-          ? _value.tempatTurun
-          : tempatTurun // ignore: cast_nullable_to_non_nullable
-              as String,
-      arti: null == arti
+      tempat_turun: freezed == tempat_turun
+          ? _value.tempat_turun
+          : tempat_turun // ignore: cast_nullable_to_non_nullable
+              as String?,
+      arti: freezed == arti
           ? _value.arti
           : arti // ignore: cast_nullable_to_non_nullable
-              as String,
-      deskripsi: null == deskripsi
+              as String?,
+      deskripsi: freezed == deskripsi
           ? _value.deskripsi
           : deskripsi // ignore: cast_nullable_to_non_nullable
-              as String,
-      ayat: null == ayat
+              as String?,
+      ayat: freezed == ayat
           ? _value._ayat
           : ayat // ignore: cast_nullable_to_non_nullable
-              as List<Ayat>,
-      suratSelanjutnya: null == suratSelanjutnya
+              as List<Ayat>?,
+      suratSelanjutnya: freezed == suratSelanjutnya
           ? _value.suratSelanjutnya
           : suratSelanjutnya // ignore: cast_nullable_to_non_nullable
-              as SurahNext,
-      suratSebelumnya: null == suratSebelumnya
+              as SurahSelanjutnya?,
+      suratSebelumnya: freezed == suratSebelumnya
           ? _value.suratSebelumnya
           : suratSebelumnya // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -229,12 +233,12 @@ class _$SurahImpl implements _Surah {
   const _$SurahImpl(
       {required this.nomor,
       required this.nama,
-      required this.namaLatin,
-      required this.jumlahAyat,
-      required this.tempatTurun,
+      required this.nama_latin,
+      required this.jumlah_ayat,
+      required this.tempat_turun,
       required this.arti,
       required this.deskripsi,
-      required final List<Ayat> ayat,
+      required final List<Ayat>? ayat,
       required this.suratSelanjutnya,
       required this.suratSebelumnya})
       : _ayat = ayat;
@@ -243,35 +247,37 @@ class _$SurahImpl implements _Surah {
       _$$SurahImplFromJson(json);
 
   @override
-  final int nomor;
+  final int? nomor;
   @override
-  final String nama;
+  final String? nama;
   @override
-  final String namaLatin;
+  final String? nama_latin;
   @override
-  final int jumlahAyat;
+  final int jumlah_ayat;
   @override
-  final String tempatTurun;
+  final String? tempat_turun;
   @override
-  final String arti;
+  final String? arti;
   @override
-  final String deskripsi;
-  final List<Ayat> _ayat;
+  final String? deskripsi;
+  final List<Ayat>? _ayat;
   @override
-  List<Ayat> get ayat {
+  List<Ayat>? get ayat {
+    final value = _ayat;
+    if (value == null) return null;
     if (_ayat is EqualUnmodifiableListView) return _ayat;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_ayat);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final SurahNext suratSelanjutnya;
+  final SurahSelanjutnya? suratSelanjutnya;
   @override
-  final bool suratSebelumnya;
+  final bool? suratSebelumnya;
 
   @override
   String toString() {
-    return 'Surah(nomor: $nomor, nama: $nama, namaLatin: $namaLatin, jumlahAyat: $jumlahAyat, tempatTurun: $tempatTurun, arti: $arti, deskripsi: $deskripsi, ayat: $ayat, suratSelanjutnya: $suratSelanjutnya, suratSebelumnya: $suratSebelumnya)';
+    return 'Surah(nomor: $nomor, nama: $nama, nama_latin: $nama_latin, jumlah_ayat: $jumlah_ayat, tempat_turun: $tempat_turun, arti: $arti, deskripsi: $deskripsi, ayat: $ayat, suratSelanjutnya: $suratSelanjutnya, suratSebelumnya: $suratSebelumnya)';
   }
 
   @override
@@ -281,12 +287,12 @@ class _$SurahImpl implements _Surah {
             other is _$SurahImpl &&
             (identical(other.nomor, nomor) || other.nomor == nomor) &&
             (identical(other.nama, nama) || other.nama == nama) &&
-            (identical(other.namaLatin, namaLatin) ||
-                other.namaLatin == namaLatin) &&
-            (identical(other.jumlahAyat, jumlahAyat) ||
-                other.jumlahAyat == jumlahAyat) &&
-            (identical(other.tempatTurun, tempatTurun) ||
-                other.tempatTurun == tempatTurun) &&
+            (identical(other.nama_latin, nama_latin) ||
+                other.nama_latin == nama_latin) &&
+            (identical(other.jumlah_ayat, jumlah_ayat) ||
+                other.jumlah_ayat == jumlah_ayat) &&
+            (identical(other.tempat_turun, tempat_turun) ||
+                other.tempat_turun == tempat_turun) &&
             (identical(other.arti, arti) || other.arti == arti) &&
             (identical(other.deskripsi, deskripsi) ||
                 other.deskripsi == deskripsi) &&
@@ -303,9 +309,9 @@ class _$SurahImpl implements _Surah {
       runtimeType,
       nomor,
       nama,
-      namaLatin,
-      jumlahAyat,
-      tempatTurun,
+      nama_latin,
+      jumlah_ayat,
+      tempat_turun,
       arti,
       deskripsi,
       const DeepCollectionEquality().hash(_ayat),
@@ -328,39 +334,39 @@ class _$SurahImpl implements _Surah {
 
 abstract class _Surah implements Surah {
   const factory _Surah(
-      {required final int nomor,
-      required final String nama,
-      required final String namaLatin,
-      required final int jumlahAyat,
-      required final String tempatTurun,
-      required final String arti,
-      required final String deskripsi,
-      required final List<Ayat> ayat,
-      required final SurahNext suratSelanjutnya,
-      required final bool suratSebelumnya}) = _$SurahImpl;
+      {required final int? nomor,
+      required final String? nama,
+      required final String? nama_latin,
+      required final int jumlah_ayat,
+      required final String? tempat_turun,
+      required final String? arti,
+      required final String? deskripsi,
+      required final List<Ayat>? ayat,
+      required final SurahSelanjutnya? suratSelanjutnya,
+      required final bool? suratSebelumnya}) = _$SurahImpl;
 
   factory _Surah.fromJson(Map<String, dynamic> json) = _$SurahImpl.fromJson;
 
   @override
-  int get nomor;
+  int? get nomor;
   @override
-  String get nama;
+  String? get nama;
   @override
-  String get namaLatin;
+  String? get nama_latin;
   @override
-  int get jumlahAyat;
+  int get jumlah_ayat;
   @override
-  String get tempatTurun;
+  String? get tempat_turun;
   @override
-  String get arti;
+  String? get arti;
   @override
-  String get deskripsi;
+  String? get deskripsi;
   @override
-  List<Ayat> get ayat;
+  List<Ayat>? get ayat;
   @override
-  SurahNext get suratSelanjutnya;
+  SurahSelanjutnya? get suratSelanjutnya;
   @override
-  bool get suratSebelumnya;
+  bool? get suratSebelumnya;
   @override
   @JsonKey(ignore: true)
   _$$SurahImplCopyWith<_$SurahImpl> get copyWith =>

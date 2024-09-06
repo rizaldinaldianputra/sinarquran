@@ -1,13 +1,13 @@
-// lib/models/surah_next.dart
+// lib/models/surah_sebelumnya.dart
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'surah_next.freezed.dart';
-part 'surah_next.g.dart';
+part 'surah_sebelumnya.freezed.dart';
+part 'surah_sebelumnya.g.dart';
 
 @freezed
-class SurahNext with _$SurahNext {
-  const factory SurahNext({
+class SurahSebelumnya with _$SurahSebelumnya {
+  const factory SurahSebelumnya({
     required int id,
     required int nomor,
     required String nama,
@@ -17,8 +17,8 @@ class SurahNext with _$SurahNext {
     required String arti,
     required String deskripsi,
     required String audio,
-  }) = _SurahNext;
+  }) = _SurahSebelumnya;
 
-  factory SurahNext.fromJson(Map<String, dynamic> json) =>
-      _$SurahNextFromJson(json);
+  factory SurahSebelumnya.fromJson(Map<String, dynamic> json) =>
+      _$SurahSebelumnyaFromJson(json);
 }

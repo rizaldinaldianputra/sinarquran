@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'surah_next.dart';
+part of 'surah_sebelumnya.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-SurahNext _$SurahNextFromJson(Map<String, dynamic> json) {
-  return _SurahNext.fromJson(json);
+SurahSebelumnya _$SurahSebelumnyaFromJson(Map<String, dynamic> json) {
+  return _SurahSebelumnya.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SurahNext {
+mixin _$SurahSebelumnya {
   int get id => throw _privateConstructorUsedError;
   int get nomor => throw _privateConstructorUsedError;
   String get nama => throw _privateConstructorUsedError;
@@ -32,14 +32,15 @@ mixin _$SurahNext {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SurahNextCopyWith<SurahNext> get copyWith =>
+  $SurahSebelumnyaCopyWith<SurahSebelumnya> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SurahNextCopyWith<$Res> {
-  factory $SurahNextCopyWith(SurahNext value, $Res Function(SurahNext) then) =
-      _$SurahNextCopyWithImpl<$Res, SurahNext>;
+abstract class $SurahSebelumnyaCopyWith<$Res> {
+  factory $SurahSebelumnyaCopyWith(
+          SurahSebelumnya value, $Res Function(SurahSebelumnya) then) =
+      _$SurahSebelumnyaCopyWithImpl<$Res, SurahSebelumnya>;
   @useResult
   $Res call(
       {int id,
@@ -54,9 +55,9 @@ abstract class $SurahNextCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SurahNextCopyWithImpl<$Res, $Val extends SurahNext>
-    implements $SurahNextCopyWith<$Res> {
-  _$SurahNextCopyWithImpl(this._value, this._then);
+class _$SurahSebelumnyaCopyWithImpl<$Res, $Val extends SurahSebelumnya>
+    implements $SurahSebelumnyaCopyWith<$Res> {
+  _$SurahSebelumnyaCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -118,11 +119,11 @@ class _$SurahNextCopyWithImpl<$Res, $Val extends SurahNext>
 }
 
 /// @nodoc
-abstract class _$$SurahNextImplCopyWith<$Res>
-    implements $SurahNextCopyWith<$Res> {
-  factory _$$SurahNextImplCopyWith(
-          _$SurahNextImpl value, $Res Function(_$SurahNextImpl) then) =
-      __$$SurahNextImplCopyWithImpl<$Res>;
+abstract class _$$SurahSebelumnyaImplCopyWith<$Res>
+    implements $SurahSebelumnyaCopyWith<$Res> {
+  factory _$$SurahSebelumnyaImplCopyWith(_$SurahSebelumnyaImpl value,
+          $Res Function(_$SurahSebelumnyaImpl) then) =
+      __$$SurahSebelumnyaImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -138,11 +139,11 @@ abstract class _$$SurahNextImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SurahNextImplCopyWithImpl<$Res>
-    extends _$SurahNextCopyWithImpl<$Res, _$SurahNextImpl>
-    implements _$$SurahNextImplCopyWith<$Res> {
-  __$$SurahNextImplCopyWithImpl(
-      _$SurahNextImpl _value, $Res Function(_$SurahNextImpl) _then)
+class __$$SurahSebelumnyaImplCopyWithImpl<$Res>
+    extends _$SurahSebelumnyaCopyWithImpl<$Res, _$SurahSebelumnyaImpl>
+    implements _$$SurahSebelumnyaImplCopyWith<$Res> {
+  __$$SurahSebelumnyaImplCopyWithImpl(
+      _$SurahSebelumnyaImpl _value, $Res Function(_$SurahSebelumnyaImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -158,7 +159,7 @@ class __$$SurahNextImplCopyWithImpl<$Res>
     Object? deskripsi = null,
     Object? audio = null,
   }) {
-    return _then(_$SurahNextImpl(
+    return _then(_$SurahSebelumnyaImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -201,8 +202,8 @@ class __$$SurahNextImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SurahNextImpl implements _SurahNext {
-  const _$SurahNextImpl(
+class _$SurahSebelumnyaImpl implements _SurahSebelumnya {
+  const _$SurahSebelumnyaImpl(
       {required this.id,
       required this.nomor,
       required this.nama,
@@ -213,8 +214,8 @@ class _$SurahNextImpl implements _SurahNext {
       required this.deskripsi,
       required this.audio});
 
-  factory _$SurahNextImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SurahNextImplFromJson(json);
+  factory _$SurahSebelumnyaImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SurahSebelumnyaImplFromJson(json);
 
   @override
   final int id;
@@ -237,14 +238,14 @@ class _$SurahNextImpl implements _SurahNext {
 
   @override
   String toString() {
-    return 'SurahNext(id: $id, nomor: $nomor, nama: $nama, namaLatin: $namaLatin, jumlahAyat: $jumlahAyat, tempatTurun: $tempatTurun, arti: $arti, deskripsi: $deskripsi, audio: $audio)';
+    return 'SurahSebelumnya(id: $id, nomor: $nomor, nama: $nama, namaLatin: $namaLatin, jumlahAyat: $jumlahAyat, tempatTurun: $tempatTurun, arti: $arti, deskripsi: $deskripsi, audio: $audio)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SurahNextImpl &&
+            other is _$SurahSebelumnyaImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.nomor, nomor) || other.nomor == nomor) &&
             (identical(other.nama, nama) || other.nama == nama) &&
@@ -268,19 +269,20 @@ class _$SurahNextImpl implements _SurahNext {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SurahNextImplCopyWith<_$SurahNextImpl> get copyWith =>
-      __$$SurahNextImplCopyWithImpl<_$SurahNextImpl>(this, _$identity);
+  _$$SurahSebelumnyaImplCopyWith<_$SurahSebelumnyaImpl> get copyWith =>
+      __$$SurahSebelumnyaImplCopyWithImpl<_$SurahSebelumnyaImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SurahNextImplToJson(
+    return _$$SurahSebelumnyaImplToJson(
       this,
     );
   }
 }
 
-abstract class _SurahNext implements SurahNext {
-  const factory _SurahNext(
+abstract class _SurahSebelumnya implements SurahSebelumnya {
+  const factory _SurahSebelumnya(
       {required final int id,
       required final int nomor,
       required final String nama,
@@ -289,10 +291,10 @@ abstract class _SurahNext implements SurahNext {
       required final String tempatTurun,
       required final String arti,
       required final String deskripsi,
-      required final String audio}) = _$SurahNextImpl;
+      required final String audio}) = _$SurahSebelumnyaImpl;
 
-  factory _SurahNext.fromJson(Map<String, dynamic> json) =
-      _$SurahNextImpl.fromJson;
+  factory _SurahSebelumnya.fromJson(Map<String, dynamic> json) =
+      _$SurahSebelumnyaImpl.fromJson;
 
   @override
   int get id;
@@ -314,6 +316,6 @@ abstract class _SurahNext implements SurahNext {
   String get audio;
   @override
   @JsonKey(ignore: true)
-  _$$SurahNextImplCopyWith<_$SurahNextImpl> get copyWith =>
+  _$$SurahSebelumnyaImplCopyWith<_$SurahSebelumnyaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

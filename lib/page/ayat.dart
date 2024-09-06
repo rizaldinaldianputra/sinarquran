@@ -1,10 +1,13 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:quransinar/bloc/cubit/cubit/surahlist_cubit.dart';
 import 'package:quransinar/constant/colors.dart';
 import 'package:quransinar/model/surah.dart';
-import 'package:quransinar/service/surah_serice.dart';
 
 class AyatPage extends StatefulWidget {
   const AyatPage({super.key});
@@ -13,192 +16,163 @@ class AyatPage extends StatefulWidget {
   State<AyatPage> createState() => _AyatPageState();
 }
 
-late TabController _tabController;
-
 class _AyatPageState extends State<AyatPage>
     with SingleTickerProviderStateMixin {
-  late SurahSerice surahSerice;
-  List<Surah> listSurah = [];
-
   @override
   void initState() {
-    surahSerice = SurahSerice(context);
-    _tabController = TabController(length: 2, vsync: this);
-    getDataSurah();
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
+    context.read<SurahlistCubit>().findAll(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
-      backgroundColor: Colors.black,
+      drawer: Drawer(
+        child: ListView(padding: EdgeInsets.zero, children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Text('Drawer Header'),
+          ),
+          ListTile(
+            title: const Text('Item 1'),
+            onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(title: const Text('Item 2'), onTap: () {})
+        ]),
+      ),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: Colors.white,
-            ),
-            onPressed: () {}),
-        title: Text(
-          'Sinar Quran',
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
+        actions: const [
+          Icon(
+            Icons.search,
+            color: Colors.white,
           )
         ],
+        iconTheme: const IconThemeData(
+            color: Colors.white), // Ganti dengan warna yang diinginkan
+
+        centerTitle: true,
+        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
+        backgroundColor: Colors.transparent,
+        title: const Text('Sinar Quran'),
       ),
+      backgroundColor: backgroundPrimary,
       body: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Asalmualaikum',
-                          style: GoogleFonts.poppins(
-                              color: Colors.white, fontSize: 18)),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        'Rizaldi Naldian Putra',
-                        style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                            fontSize: 20),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Stack(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: Container(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: EdgeInsets.all(20.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.menu_book,
-                                  color: Colors.white,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text('Last Read',
-                                    style: GoogleFonts.poppins(
-                                        color: Colors.white, fontSize: 18)),
-                              ],
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: BlocBuilder<SurahlistCubit, SurahlistState>(
+                builder: (context, state) {
+                  return state.when(
+                    /// The [Widget] is given a [ListTile] that is given a [Text] and a
+                    /// [Text].
+                    initial: () => const Center(child: Text('Load Data')),
+                    loading: () =>
+                        const Center(child: CircularProgressIndicator()),
+                    success: (surahList) => ListView.builder(
+                      itemCount: surahList.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          onTap: () {
+                            context.goNamed("detailayat", queryParameters: {
+                              'idayat': surahList[index].nomor.toString()
+                            });
+                          },
+                          trailing: Text(surahList[index].nama!,
+                              style: TextStyle(
+                                  color: secondaryColor, fontSize: 20)),
+                          title: Text(
+                              '${surahList[index].nama_latin} (${surahList[index].jumlah_ayat})',
+                              style: GoogleFonts.poppins(
+                                  color: Colors.white, fontSize: 20)),
+                          subtitle: Text(surahList[index].tempat_turun!,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 16)),
+                          leading: ClipPath(
+                            clipper: StarClipper(8),
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              color: secondaryColor,
+                              child: Center(
+                                  child: Text(
+                                index.toString(),
+                                style: const TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )),
                             ),
-                            SizedBox(
-                              height: 10,
+                          ),
+                        );
+                      },
+                    ),
+                    error: (message) => Center(child: Text(message)),
+                    searching: () =>
+                        const Center(child: CircularProgressIndicator()),
+                    searchSuccess: (searchResults) => ListView.builder(
+                      itemCount: searchResults.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          onTap: () {
+                            context.goNamed("detailayat", queryParameters: {
+                              'idayat': searchResults[index].nomor.toString()
+                            });
+                          },
+                          trailing: Text(searchResults[index].nama!,
+                              style: TextStyle(
+                                  color: secondaryColor, fontSize: 20)),
+                          title: Text(
+                              '${searchResults[index].nama_latin} (${searchResults[index].jumlah_ayat})',
+                              style: GoogleFonts.poppins(
+                                  color: Colors.white, fontSize: 20)),
+                          subtitle: Text(searchResults[index].tempat_turun!,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 16)),
+                          leading: ClipPath(
+                            clipper: StarClipper(8),
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              color: secondaryColor,
+                              child: Center(
+                                  child: Text(
+                                index.toString(),
+                                style: const TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )),
                             ),
-                            Text('Al- Fatiah',
-                                style: GoogleFonts.poppins(
-                                    color: Colors.white, fontSize: 30)),
-                            Text('Ayat : 1',
-                                style: GoogleFonts.poppins(
-                                    color: Colors.white, fontSize: 18))
-                          ],
-                        ),
-                      ),
-                      height: 150,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(colors: [
-                        HexColor('994EF8'),
-                        HexColor('994EF8'),
-                        Colors.white
-                      ])),
+                          ),
+                        );
+                      },
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 30.0, right: 10),
-                      child: Image.asset(
-                        'assets/Quran.png',
-                        width: 200,
-                      ),
-                    ),
-                  ),
-                ],
+                    searchError: (errorMessage) =>
+                        Center(child: Text('Search Error: $errorMessage')),
+                  );
+                },
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: 340,
-                margin: EdgeInsets.all(3),
-                child: ListView.builder(
-                  itemCount: listSurah.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      trailing: Text(listSurah[index].nama.toString(),
-                          style:
-                              TextStyle(color: secondaryColor, fontSize: 20)),
-                      title: Text(
-                          listSurah[index].namaLatin.toString() +
-                              ' ' +
-                              listSurah[index].jumlahAyat.toString(),
-                          style: GoogleFonts.poppins(
-                              color: Colors.white, fontSize: 20)),
-                      subtitle: Text(listSurah[index].tempatTurun.toString(),
-                          style: TextStyle(color: Colors.white, fontSize: 16)),
-                      leading: ClipPath(
-                        clipper: StarClipper(8),
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: secondaryColor,
-                          child: Center(
-                              child: Text(
-                            index.toString(),
-                            style: TextStyle(color: Colors.white, fontSize: 16),
-                          )),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+      bottomNavigationBar: ConvexAppBar(
+        backgroundColor: backgroundPrimary,
+        style: TabStyle.react,
+        items: const [
+          TabItem(icon: Icons.list),
+          TabItem(icon: Icons.calendar_today),
+          TabItem(icon: Icons.assessment),
+        ],
+        initialActiveIndex: 1,
+        onTap: (int i) => print('click index=$i'),
+      ),
     );
-  }
-
-  void getDataSurah() async {
-    final x = await surahSerice.findAllSurah();
-    listSurah = x;
-    setState(() {});
   }
 }

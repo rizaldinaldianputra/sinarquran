@@ -13,7 +13,7 @@ import 'package:quransinar/constant/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CommonService {
-  static final String url = API_URL;
+  static const String url = API_URL;
   static BaseOptions opts = BaseOptions(
     baseUrl: url,
     responseType: ResponseType.json,
@@ -65,8 +65,7 @@ class CommonService {
           return errorInterceptor.resolve(error.response!);
         } else {
           Fluttertoast.showToast(
-              msg: error.response!.statusCode.toString() +
-                  "-" +
+              msg: "${error.response!.statusCode}-" +
                   error.response!.data["message"],
               toastLength: Toast.LENGTH_SHORT,
               backgroundColor: Colors.red,
@@ -80,8 +79,9 @@ class CommonService {
         SharedPreferences sharedPreferences =
             await SharedPreferences.getInstance();
         token = sharedPreferences.getString("token");
-        if (token != null)
+        if (token != null) {
           request.headers.addAll({"Authorization": "Bearer: $token"});
+        }
         return requestInterceptor.next(request);
       },
       onResponse: (response, handler) async {
@@ -134,10 +134,11 @@ class CommonService {
       diopackage.Response response = await _dio.post(url, data: json);
       return response;
     } on DioException catch (e) {
-      if (e.response == null)
+      if (e.response == null) {
         return Future.error(e);
-      else
+      } else {
         return Future.error(e.response!.data['message']);
+      }
     }
   }
 
@@ -147,10 +148,11 @@ class CommonService {
       diopackage.Response response = await _dio.post(url, data: data);
       return response;
     } on DioException catch (e) {
-      if (e.response == null)
+      if (e.response == null) {
         return Future.error(e);
-      else
+      } else {
         return Future.error(e.response!.data['message']);
+      }
     }
   }
 
@@ -159,10 +161,11 @@ class CommonService {
       diopackage.Response response = await _dio.post(url, data: data);
       return response;
     } on DioException catch (e) {
-      if (e.response == null)
+      if (e.response == null) {
         return Future.error(e);
-      else
+      } else {
         return Future.error(e.response!.data['message']);
+      }
     }
   }
 

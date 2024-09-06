@@ -15,10 +15,10 @@ class _DashboardPageState extends State<DashboardPage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    AyatPage(),
-    DoaPage(),
-    Center(child: Text('Settings Page')),
-    Center(child: Text('Settings Page')),
+    const AyatPage(),
+    const DoaPage(),
+    const Center(child: Text('Settings Page')),
+    const Center(child: Text('Settings Page')),
   ];
 
   void _onItemTapped(int index) {
@@ -35,11 +35,9 @@ class _DashboardPageState extends State<DashboardPage> {
           bottomNavigationBar: ConvexAppBar(
             backgroundColor: secondaryColor,
             style: TabStyle.react,
-            items: [
+            items: const [
               TabItem(icon: Icons.home, title: 'Home'),
               TabItem(icon: Icons.star, title: 'Favorites'),
-              TabItem(icon: Icons.settings, title: 'Settings'),
-              TabItem(icon: Icons.settings, title: 'Settings'),
             ],
             initialActiveIndex: _selectedIndex, // optional, default as 0
             onTap: _onItemTapped,

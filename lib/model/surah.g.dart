@@ -7,28 +7,30 @@ part of 'surah.dart';
 // **************************************************************************
 
 _$SurahImpl _$$SurahImplFromJson(Map<String, dynamic> json) => _$SurahImpl(
-      nomor: (json['nomor'] as num).toInt(),
-      nama: json['nama'] as String,
-      namaLatin: json['namaLatin'] as String,
-      jumlahAyat: (json['jumlahAyat'] as num).toInt(),
-      tempatTurun: json['tempatTurun'] as String,
-      arti: json['arti'] as String,
-      deskripsi: json['deskripsi'] as String,
-      ayat: (json['ayat'] as List<dynamic>)
-          .map((e) => Ayat.fromJson(e as Map<String, dynamic>))
+      nomor: (json['nomor'] as num?)?.toInt(),
+      nama: json['nama'] as String?,
+      nama_latin: json['nama_latin'] as String?,
+      jumlah_ayat: (json['jumlah_ayat'] as num).toInt(),
+      tempat_turun: json['tempat_turun'] as String?,
+      arti: json['arti'] as String?,
+      deskripsi: json['deskripsi'] as String?,
+      ayat: (json['ayat'] as List<dynamic>?)
+          ?.map((e) => Ayat.fromJson(e as Map<String, dynamic>))
           .toList(),
-      suratSelanjutnya:
-          SurahNext.fromJson(json['suratSelanjutnya'] as Map<String, dynamic>),
-      suratSebelumnya: json['suratSebelumnya'] as bool,
+      suratSelanjutnya: json['suratSelanjutnya'] == null
+          ? null
+          : SurahSelanjutnya.fromJson(
+              json['suratSelanjutnya'] as Map<String, dynamic>),
+      suratSebelumnya: json['suratSebelumnya'] as bool?,
     );
 
 Map<String, dynamic> _$$SurahImplToJson(_$SurahImpl instance) =>
     <String, dynamic>{
       'nomor': instance.nomor,
       'nama': instance.nama,
-      'namaLatin': instance.namaLatin,
-      'jumlahAyat': instance.jumlahAyat,
-      'tempatTurun': instance.tempatTurun,
+      'nama_latin': instance.nama_latin,
+      'jumlah_ayat': instance.jumlah_ayat,
+      'tempat_turun': instance.tempat_turun,
       'arti': instance.arti,
       'deskripsi': instance.deskripsi,
       'ayat': instance.ayat,
