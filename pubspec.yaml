@@ -28,8 +28,10 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  audioplayers: ^6.1.0
   bloc: ^8.1.4
   build_runner: 2.4.9
+  carousel_slider: ^5.0.0
   convex_bottom_bar: ^3.2.0
   cupertino_icons: ^1.0.6
   dio: ^5.4.3+1
@@ -38,12 +40,15 @@ dependencies:
   flutter_bloc: ^8.1.5
   flutter_custom_clippers: ^2.1.0
   flutter_inappwebview: ^6.0.0
+  flutter_svg: ^2.0.10+1
+  flutter_widget_from_html: ^0.15.2
   fluttertoast: ^8.2.5
   freezed_annotation: ^2.4.1
   go_router: ^14.1.4
   google_fonts: ^6.2.1
   hexcolor: ^3.0.1
   json_annotation: ^4.9.0
+  popover: ^0.3.0+1
   shared_preferences: ^2.2.3
 
 dev_dependencies:

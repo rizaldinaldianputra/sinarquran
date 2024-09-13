@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'surahlist_cubit.dart';
+part of 'surahsearch_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,12 +15,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$SurahlistState {
+mixin _$SurahsearchState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Surah> detailsurah) success,
+    required TResult Function(List<Surah> surahList) success,
     required TResult Function() searching,
     required TResult Function(List<Surah> searchResults) searchSuccess,
     required TResult Function(String errorMessage) searchError,
@@ -31,7 +31,7 @@ mixin _$SurahlistState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Surah> detailsurah)? success,
+    TResult? Function(List<Surah> surahList)? success,
     TResult? Function()? searching,
     TResult? Function(List<Surah> searchResults)? searchSuccess,
     TResult? Function(String errorMessage)? searchError,
@@ -42,7 +42,7 @@ mixin _$SurahlistState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Surah> detailsurah)? success,
+    TResult Function(List<Surah> surahList)? success,
     TResult Function()? searching,
     TResult Function(List<Surah> searchResults)? searchSuccess,
     TResult Function(String errorMessage)? searchError,
@@ -87,16 +87,16 @@ mixin _$SurahlistState {
 }
 
 /// @nodoc
-abstract class $SurahlistStateCopyWith<$Res> {
-  factory $SurahlistStateCopyWith(
-          SurahlistState value, $Res Function(SurahlistState) then) =
-      _$SurahlistStateCopyWithImpl<$Res, SurahlistState>;
+abstract class $SurahsearchStateCopyWith<$Res> {
+  factory $SurahsearchStateCopyWith(
+          SurahsearchState value, $Res Function(SurahsearchState) then) =
+      _$SurahsearchStateCopyWithImpl<$Res, SurahsearchState>;
 }
 
 /// @nodoc
-class _$SurahlistStateCopyWithImpl<$Res, $Val extends SurahlistState>
-    implements $SurahlistStateCopyWith<$Res> {
-  _$SurahlistStateCopyWithImpl(this._value, this._then);
+class _$SurahsearchStateCopyWithImpl<$Res, $Val extends SurahsearchState>
+    implements $SurahsearchStateCopyWith<$Res> {
+  _$SurahsearchStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -113,7 +113,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SurahlistStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$SurahsearchStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -127,7 +127,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'SurahlistState.initial()';
+    return 'SurahsearchState.initial()';
   }
 
   @override
@@ -144,7 +144,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Surah> detailsurah) success,
+    required TResult Function(List<Surah> surahList) success,
     required TResult Function() searching,
     required TResult Function(List<Surah> searchResults) searchSuccess,
     required TResult Function(String errorMessage) searchError,
@@ -158,7 +158,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Surah> detailsurah)? success,
+    TResult? Function(List<Surah> surahList)? success,
     TResult? Function()? searching,
     TResult? Function(List<Surah> searchResults)? searchSuccess,
     TResult? Function(String errorMessage)? searchError,
@@ -172,7 +172,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Surah> detailsurah)? success,
+    TResult Function(List<Surah> surahList)? success,
     TResult Function()? searching,
     TResult Function(List<Surah> searchResults)? searchSuccess,
     TResult Function(String errorMessage)? searchError,
@@ -232,7 +232,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SurahlistState {
+abstract class _Initial implements SurahsearchState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -245,7 +245,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$SurahlistStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$SurahsearchStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -259,7 +259,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'SurahlistState.loading()';
+    return 'SurahsearchState.loading()';
   }
 
   @override
@@ -276,7 +276,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Surah> detailsurah) success,
+    required TResult Function(List<Surah> surahList) success,
     required TResult Function() searching,
     required TResult Function(List<Surah> searchResults) searchSuccess,
     required TResult Function(String errorMessage) searchError,
@@ -290,7 +290,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Surah> detailsurah)? success,
+    TResult? Function(List<Surah> surahList)? success,
     TResult? Function()? searching,
     TResult? Function(List<Surah> searchResults)? searchSuccess,
     TResult? Function(String errorMessage)? searchError,
@@ -304,7 +304,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Surah> detailsurah)? success,
+    TResult Function(List<Surah> surahList)? success,
     TResult Function()? searching,
     TResult Function(List<Surah> searchResults)? searchSuccess,
     TResult Function(String errorMessage)? searchError,
@@ -364,7 +364,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements SurahlistState {
+abstract class _Loading implements SurahsearchState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -374,12 +374,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Surah> detailsurah});
+  $Res call({List<Surah> surahList});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$SurahlistStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$SurahsearchStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -388,12 +388,12 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? detailsurah = null,
+    Object? surahList = null,
   }) {
     return _then(_$SuccessImpl(
-      null == detailsurah
-          ? _value._detailsurah
-          : detailsurah // ignore: cast_nullable_to_non_nullable
+      null == surahList
+          ? _value._surahList
+          : surahList // ignore: cast_nullable_to_non_nullable
               as List<Surah>,
     ));
   }
@@ -402,20 +402,19 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(final List<Surah> detailsurah)
-      : _detailsurah = detailsurah;
+  const _$SuccessImpl(final List<Surah> surahList) : _surahList = surahList;
 
-  final List<Surah> _detailsurah;
+  final List<Surah> _surahList;
   @override
-  List<Surah> get detailsurah {
-    if (_detailsurah is EqualUnmodifiableListView) return _detailsurah;
+  List<Surah> get surahList {
+    if (_surahList is EqualUnmodifiableListView) return _surahList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_detailsurah);
+    return EqualUnmodifiableListView(_surahList);
   }
 
   @override
   String toString() {
-    return 'SurahlistState.success(detailsurah: $detailsurah)';
+    return 'SurahsearchState.success(surahList: $surahList)';
   }
 
   @override
@@ -424,12 +423,12 @@ class _$SuccessImpl implements _Success {
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
             const DeepCollectionEquality()
-                .equals(other._detailsurah, _detailsurah));
+                .equals(other._surahList, _surahList));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_detailsurah));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_surahList));
 
   @JsonKey(ignore: true)
   @override
@@ -442,13 +441,13 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Surah> detailsurah) success,
+    required TResult Function(List<Surah> surahList) success,
     required TResult Function() searching,
     required TResult Function(List<Surah> searchResults) searchSuccess,
     required TResult Function(String errorMessage) searchError,
     required TResult Function(String errorMessage) error,
   }) {
-    return success(detailsurah);
+    return success(surahList);
   }
 
   @override
@@ -456,13 +455,13 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Surah> detailsurah)? success,
+    TResult? Function(List<Surah> surahList)? success,
     TResult? Function()? searching,
     TResult? Function(List<Surah> searchResults)? searchSuccess,
     TResult? Function(String errorMessage)? searchError,
     TResult? Function(String errorMessage)? error,
   }) {
-    return success?.call(detailsurah);
+    return success?.call(surahList);
   }
 
   @override
@@ -470,7 +469,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Surah> detailsurah)? success,
+    TResult Function(List<Surah> surahList)? success,
     TResult Function()? searching,
     TResult Function(List<Surah> searchResults)? searchSuccess,
     TResult Function(String errorMessage)? searchError,
@@ -478,7 +477,7 @@ class _$SuccessImpl implements _Success {
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(detailsurah);
+      return success(surahList);
     }
     return orElse();
   }
@@ -530,10 +529,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements SurahlistState {
-  const factory _Success(final List<Surah> detailsurah) = _$SuccessImpl;
+abstract class _Success implements SurahsearchState {
+  const factory _Success(final List<Surah> surahList) = _$SuccessImpl;
 
-  List<Surah> get detailsurah;
+  List<Surah> get surahList;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -548,7 +547,7 @@ abstract class _$$SearchingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SearchingImplCopyWithImpl<$Res>
-    extends _$SurahlistStateCopyWithImpl<$Res, _$SearchingImpl>
+    extends _$SurahsearchStateCopyWithImpl<$Res, _$SearchingImpl>
     implements _$$SearchingImplCopyWith<$Res> {
   __$$SearchingImplCopyWithImpl(
       _$SearchingImpl _value, $Res Function(_$SearchingImpl) _then)
@@ -562,7 +561,7 @@ class _$SearchingImpl implements _Searching {
 
   @override
   String toString() {
-    return 'SurahlistState.searching()';
+    return 'SurahsearchState.searching()';
   }
 
   @override
@@ -579,7 +578,7 @@ class _$SearchingImpl implements _Searching {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Surah> detailsurah) success,
+    required TResult Function(List<Surah> surahList) success,
     required TResult Function() searching,
     required TResult Function(List<Surah> searchResults) searchSuccess,
     required TResult Function(String errorMessage) searchError,
@@ -593,7 +592,7 @@ class _$SearchingImpl implements _Searching {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Surah> detailsurah)? success,
+    TResult? Function(List<Surah> surahList)? success,
     TResult? Function()? searching,
     TResult? Function(List<Surah> searchResults)? searchSuccess,
     TResult? Function(String errorMessage)? searchError,
@@ -607,7 +606,7 @@ class _$SearchingImpl implements _Searching {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Surah> detailsurah)? success,
+    TResult Function(List<Surah> surahList)? success,
     TResult Function()? searching,
     TResult Function(List<Surah> searchResults)? searchSuccess,
     TResult Function(String errorMessage)? searchError,
@@ -667,7 +666,7 @@ class _$SearchingImpl implements _Searching {
   }
 }
 
-abstract class _Searching implements SurahlistState {
+abstract class _Searching implements SurahsearchState {
   const factory _Searching() = _$SearchingImpl;
 }
 
@@ -682,7 +681,7 @@ abstract class _$$SearchSuccessImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SearchSuccessImplCopyWithImpl<$Res>
-    extends _$SurahlistStateCopyWithImpl<$Res, _$SearchSuccessImpl>
+    extends _$SurahsearchStateCopyWithImpl<$Res, _$SearchSuccessImpl>
     implements _$$SearchSuccessImplCopyWith<$Res> {
   __$$SearchSuccessImplCopyWithImpl(
       _$SearchSuccessImpl _value, $Res Function(_$SearchSuccessImpl) _then)
@@ -718,7 +717,7 @@ class _$SearchSuccessImpl implements _SearchSuccess {
 
   @override
   String toString() {
-    return 'SurahlistState.searchSuccess(searchResults: $searchResults)';
+    return 'SurahsearchState.searchSuccess(searchResults: $searchResults)';
   }
 
   @override
@@ -745,7 +744,7 @@ class _$SearchSuccessImpl implements _SearchSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Surah> detailsurah) success,
+    required TResult Function(List<Surah> surahList) success,
     required TResult Function() searching,
     required TResult Function(List<Surah> searchResults) searchSuccess,
     required TResult Function(String errorMessage) searchError,
@@ -759,7 +758,7 @@ class _$SearchSuccessImpl implements _SearchSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Surah> detailsurah)? success,
+    TResult? Function(List<Surah> surahList)? success,
     TResult? Function()? searching,
     TResult? Function(List<Surah> searchResults)? searchSuccess,
     TResult? Function(String errorMessage)? searchError,
@@ -773,7 +772,7 @@ class _$SearchSuccessImpl implements _SearchSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Surah> detailsurah)? success,
+    TResult Function(List<Surah> surahList)? success,
     TResult Function()? searching,
     TResult Function(List<Surah> searchResults)? searchSuccess,
     TResult Function(String errorMessage)? searchError,
@@ -833,7 +832,7 @@ class _$SearchSuccessImpl implements _SearchSuccess {
   }
 }
 
-abstract class _SearchSuccess implements SurahlistState {
+abstract class _SearchSuccess implements SurahsearchState {
   const factory _SearchSuccess(final List<Surah> searchResults) =
       _$SearchSuccessImpl;
 
@@ -854,7 +853,7 @@ abstract class _$$SearchErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SearchErrorImplCopyWithImpl<$Res>
-    extends _$SurahlistStateCopyWithImpl<$Res, _$SearchErrorImpl>
+    extends _$SurahsearchStateCopyWithImpl<$Res, _$SearchErrorImpl>
     implements _$$SearchErrorImplCopyWith<$Res> {
   __$$SearchErrorImplCopyWithImpl(
       _$SearchErrorImpl _value, $Res Function(_$SearchErrorImpl) _then)
@@ -884,7 +883,7 @@ class _$SearchErrorImpl implements _SearchError {
 
   @override
   String toString() {
-    return 'SurahlistState.searchError(errorMessage: $errorMessage)';
+    return 'SurahsearchState.searchError(errorMessage: $errorMessage)';
   }
 
   @override
@@ -910,7 +909,7 @@ class _$SearchErrorImpl implements _SearchError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Surah> detailsurah) success,
+    required TResult Function(List<Surah> surahList) success,
     required TResult Function() searching,
     required TResult Function(List<Surah> searchResults) searchSuccess,
     required TResult Function(String errorMessage) searchError,
@@ -924,7 +923,7 @@ class _$SearchErrorImpl implements _SearchError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Surah> detailsurah)? success,
+    TResult? Function(List<Surah> surahList)? success,
     TResult? Function()? searching,
     TResult? Function(List<Surah> searchResults)? searchSuccess,
     TResult? Function(String errorMessage)? searchError,
@@ -938,7 +937,7 @@ class _$SearchErrorImpl implements _SearchError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Surah> detailsurah)? success,
+    TResult Function(List<Surah> surahList)? success,
     TResult Function()? searching,
     TResult Function(List<Surah> searchResults)? searchSuccess,
     TResult Function(String errorMessage)? searchError,
@@ -998,7 +997,7 @@ class _$SearchErrorImpl implements _SearchError {
   }
 }
 
-abstract class _SearchError implements SurahlistState {
+abstract class _SearchError implements SurahsearchState {
   const factory _SearchError(final String errorMessage) = _$SearchErrorImpl;
 
   String get errorMessage;
@@ -1018,7 +1017,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$SurahlistStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$SurahsearchStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -1048,7 +1047,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'SurahlistState.error(errorMessage: $errorMessage)';
+    return 'SurahsearchState.error(errorMessage: $errorMessage)';
   }
 
   @override
@@ -1074,7 +1073,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Surah> detailsurah) success,
+    required TResult Function(List<Surah> surahList) success,
     required TResult Function() searching,
     required TResult Function(List<Surah> searchResults) searchSuccess,
     required TResult Function(String errorMessage) searchError,
@@ -1088,7 +1087,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<Surah> detailsurah)? success,
+    TResult? Function(List<Surah> surahList)? success,
     TResult? Function()? searching,
     TResult? Function(List<Surah> searchResults)? searchSuccess,
     TResult? Function(String errorMessage)? searchError,
@@ -1102,7 +1101,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Surah> detailsurah)? success,
+    TResult Function(List<Surah> surahList)? success,
     TResult Function()? searching,
     TResult Function(List<Surah> searchResults)? searchSuccess,
     TResult Function(String errorMessage)? searchError,
@@ -1162,7 +1161,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements SurahlistState {
+abstract class _Error implements SurahsearchState {
   const factory _Error(final String errorMessage) = _$ErrorImpl;
 
   String get errorMessage;

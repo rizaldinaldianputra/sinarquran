@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'surah_cubit.dart';
+part of 'doa_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,12 +15,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$SurahState {
+mixin _$DoaState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DetailSurah detailsurah) success,
+    required TResult Function(Doa detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$SurahState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DetailSurah detailsurah)? success,
+    TResult? Function(Doa detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$SurahState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DetailSurah detailsurah)? success,
+    TResult Function(Doa detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) =>
@@ -69,16 +69,15 @@ mixin _$SurahState {
 }
 
 /// @nodoc
-abstract class $SurahStateCopyWith<$Res> {
-  factory $SurahStateCopyWith(
-          SurahState value, $Res Function(SurahState) then) =
-      _$SurahStateCopyWithImpl<$Res, SurahState>;
+abstract class $DoaStateCopyWith<$Res> {
+  factory $DoaStateCopyWith(DoaState value, $Res Function(DoaState) then) =
+      _$DoaStateCopyWithImpl<$Res, DoaState>;
 }
 
 /// @nodoc
-class _$SurahStateCopyWithImpl<$Res, $Val extends SurahState>
-    implements $SurahStateCopyWith<$Res> {
-  _$SurahStateCopyWithImpl(this._value, this._then);
+class _$DoaStateCopyWithImpl<$Res, $Val extends DoaState>
+    implements $DoaStateCopyWith<$Res> {
+  _$DoaStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +94,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SurahStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$DoaStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -109,7 +108,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'SurahState.initial()';
+    return 'DoaState.initial()';
   }
 
   @override
@@ -126,7 +125,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DetailSurah detailsurah) success,
+    required TResult Function(Doa detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) {
     return initial();
@@ -137,7 +136,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DetailSurah detailsurah)? success,
+    TResult? Function(Doa detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) {
     return initial?.call();
@@ -148,7 +147,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DetailSurah detailsurah)? success,
+    TResult Function(Doa detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -196,7 +195,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SurahState {
+abstract class _Initial implements DoaState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -209,7 +208,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$SurahStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$DoaStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -223,7 +222,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'SurahState.loading()';
+    return 'DoaState.loading()';
   }
 
   @override
@@ -240,7 +239,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DetailSurah detailsurah) success,
+    required TResult Function(Doa detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) {
     return loading();
@@ -251,7 +250,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DetailSurah detailsurah)? success,
+    TResult? Function(Doa detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) {
     return loading?.call();
@@ -262,7 +261,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DetailSurah detailsurah)? success,
+    TResult Function(Doa detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -310,7 +309,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements SurahState {
+abstract class _Loading implements DoaState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -320,14 +319,14 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DetailSurah detailsurah});
+  $Res call({Doa detailsurah});
 
-  $DetailSurahCopyWith<$Res> get detailsurah;
+  $DoaCopyWith<$Res> get detailsurah;
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$SurahStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$DoaStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -342,14 +341,14 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == detailsurah
           ? _value.detailsurah
           : detailsurah // ignore: cast_nullable_to_non_nullable
-              as DetailSurah,
+              as Doa,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $DetailSurahCopyWith<$Res> get detailsurah {
-    return $DetailSurahCopyWith<$Res>(_value.detailsurah, (value) {
+  $DoaCopyWith<$Res> get detailsurah {
+    return $DoaCopyWith<$Res>(_value.detailsurah, (value) {
       return _then(_value.copyWith(detailsurah: value));
     });
   }
@@ -361,11 +360,11 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl(this.detailsurah);
 
   @override
-  final DetailSurah detailsurah;
+  final Doa detailsurah;
 
   @override
   String toString() {
-    return 'SurahState.success(detailsurah: $detailsurah)';
+    return 'DoaState.success(detailsurah: $detailsurah)';
   }
 
   @override
@@ -391,7 +390,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DetailSurah detailsurah) success,
+    required TResult Function(Doa detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) {
     return success(detailsurah);
@@ -402,7 +401,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DetailSurah detailsurah)? success,
+    TResult? Function(Doa detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) {
     return success?.call(detailsurah);
@@ -413,7 +412,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DetailSurah detailsurah)? success,
+    TResult Function(Doa detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -461,10 +460,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements SurahState {
-  const factory _Success(final DetailSurah detailsurah) = _$SuccessImpl;
+abstract class _Success implements DoaState {
+  const factory _Success(final Doa detailsurah) = _$SuccessImpl;
 
-  DetailSurah get detailsurah;
+  Doa get detailsurah;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -481,7 +480,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$SurahStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$DoaStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -511,7 +510,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'SurahState.error(errorMessage: $errorMessage)';
+    return 'DoaState.error(errorMessage: $errorMessage)';
   }
 
   @override
@@ -537,7 +536,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DetailSurah detailsurah) success,
+    required TResult Function(Doa detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) {
     return error(errorMessage);
@@ -548,7 +547,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DetailSurah detailsurah)? success,
+    TResult? Function(Doa detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) {
     return error?.call(errorMessage);
@@ -559,7 +558,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DetailSurah detailsurah)? success,
+    TResult Function(Doa detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -607,7 +606,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements SurahState {
+abstract class _Error implements DoaState {
   const factory _Error(final String errorMessage) = _$ErrorImpl;
 
   String get errorMessage;

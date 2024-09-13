@@ -4,6 +4,6 @@ part of 'surah_cubit.dart';
 class SurahState with _$SurahState {
   const factory SurahState.initial() = _Initial;
   const factory SurahState.loading() = _Loading;
-  const factory SurahState.success(DetailSurah detailsurah) = _Success;
+  const factory SurahState.success(List<Surah> detailsurah) = _Success;
   const factory SurahState.error(String errorMessage) = _Error;
 }

@@ -1,20 +1,19 @@
 import 'package:dio/dio.dart';
-import 'package:quransinar/constant/constant.dart';
-import 'package:quransinar/model/detail_surah.dart';
+import 'package:quransinar/model/doa.dart';
 import 'package:quransinar/model/surah.dart';
 import 'package:quransinar/service/dio_service.dart';
 
-class SurahService {
+class DoaService {
   late CommonService api;
   late Response response;
-  String url = '$API_URL/surah';
+  String url = 'https://open-api.my.id/api/doa';
   String connErr = 'Please check your internet connection and try again';
 
-  SurahService(context) {
+  DoaService(context) {
     api = CommonService(context);
   }
 
-  Future<List<Surah>> findAllSurah() async {
+  Future<List<Surah>> findAllDoa() async {
     response = await api.getHTTP(url);
 
     List<Surah> listData = <Surah>[];
@@ -26,11 +25,11 @@ class SurahService {
     return listData;
   }
 
-  Future<DetailSurah> findAllSurahById(int id) async {
+  Future<Doa> findAllDoaById(int id) async {
     try {
       final response = await api.getHTTP("$url/$id");
       if (response.statusCode == 200) {
-        final result = DetailSurah.fromJson(response.data);
+        final result = Doa.fromJson(response.data);
         return result;
       } else {
         // Handle different response status codes

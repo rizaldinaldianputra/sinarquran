@@ -19,6 +19,7 @@ class _DashboardPageState extends State<DashboardPage> {
     const DoaPage(),
     const Center(child: Text('Settings Page')),
     const Center(child: Text('Settings Page')),
+    const Center(child: Text('Settings Page')),
   ];
 
   void _onItemTapped(int index) {
@@ -30,19 +31,8 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          backgroundColor: Colors.black,
-          bottomNavigationBar: ConvexAppBar(
-            backgroundColor: secondaryColor,
-            style: TabStyle.react,
-            items: const [
-              TabItem(icon: Icons.home, title: 'Home'),
-              TabItem(icon: Icons.star, title: 'Favorites'),
-            ],
-            initialActiveIndex: _selectedIndex, // optional, default as 0
-            onTap: _onItemTapped,
-          ),
-          body: _pages[_selectedIndex]),
+      home:
+          Scaffold(backgroundColor: Colors.black, body: _pages[_selectedIndex]),
     );
   }
 }
