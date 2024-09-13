@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quransinar/bloc/cubit/doa/doa_cubit.dart';
+import 'package:quransinar/bloc/cubit/home/home_cubit.dart';
 import 'package:quransinar/bloc/cubit/surah/search_surah/surahsearch_cubit.dart';
 import 'package:quransinar/bloc/cubit/surah/list_surah/surah_cubit.dart';
-import 'package:quransinar/bloc/cubit/surah/surahdetail_cubit.dart';
+import 'package:quransinar/bloc/cubit/surah/surah_detail/surahdetail_cubit.dart';
 import 'package:quransinar/bloc/thmemode_cubit.dart';
 import 'package:quransinar/routing/route.dart';
 
@@ -28,7 +30,10 @@ class MyApp extends StatelessWidget {
         BlocProvider<SurahsearchCubit>(
           create: (context) => SurahsearchCubit(),
         ),
-        BlocProvider(create: ((context) => SurahCubit()))
+        BlocProvider(create: ((context) => SurahCubit())),
+        BlocProvider(create: ((context) => DoaCubit())),
+        BlocProvider(create: ((context) => HomeAyat())),
+        BlocProvider(create: ((context) => HomeSurah()))
       ],
       child: BlocBuilder<ThemeCubit, ThemeData>(
         builder: (context, theme) {

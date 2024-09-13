@@ -9,12 +9,12 @@ part 'doa_cubit.freezed.dart';
 class DoaCubit extends Cubit<DoaState> {
   DoaCubit() : super(const DoaState.initial());
 
-  Future<void> fetchSurahById(String id, context) async {
+  Future<void> findAllDoa(context) async {
     final DoaService doaService = DoaService(context);
     try {
       emit(const DoaState.loading());
-      final Doa surah = await doaService.findAllDoaById(int.parse(id));
-      emit(DoaState.success(surah));
+      final List<Doa> doa = await doaService.findAllDoa();
+      emit(DoaState.success(doa));
     } catch (e) {
       emit(DoaState.error("Failed to load surah: ${e.toString()}"));
     }

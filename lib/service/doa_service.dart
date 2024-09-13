@@ -13,13 +13,13 @@ class DoaService {
     api = CommonService(context);
   }
 
-  Future<List<Surah>> findAllDoa() async {
+  Future<List<Doa>> findAllDoa() async {
     response = await api.getHTTP(url);
 
-    List<Surah> listData = <Surah>[];
+    List<Doa> listData = <Doa>[];
     List<dynamic> listReturn = response.data as List;
     for (var i in listReturn) {
-      listData.add(Surah.fromJson(i));
+      listData.add(Doa.fromJson(i));
     }
 
     return listData;

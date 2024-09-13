@@ -2,10 +2,12 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:quransinar/bloc/cubit/home/home_cubit.dart';
 import 'package:quransinar/bloc/cubit/surah/list_surah/surah_cubit.dart';
-import 'package:quransinar/bloc/cubit/surah/surahdetail_cubit.dart';
+import 'package:quransinar/bloc/cubit/surah/surah_detail/surahdetail_cubit.dart';
 
 class DetailAyat extends StatefulWidget {
   final String idayat;
@@ -160,9 +162,24 @@ class _DetailAyatState extends State<DetailAyat> {
                                               const SizedBox(
                                                 width: 10,
                                               ),
-                                              Icon(
-                                                Icons.bookmark,
-                                                color: Colors.purple.shade400,
+                                              IconButton(
+                                                icon: Icon(
+                                                  Icons.bookmark,
+                                                  color: Colors.purple.shade400,
+                                                ),
+                                                onPressed: () {
+                                                  context
+                                                      .read<HomeSurah>()
+                                                      .setSurah(detailsurah
+                                                          .nama_latin);
+                                                  context
+                                                      .read<HomeAyat>()
+                                                      .setAyat(ayat.nomor
+                                                          .toString());
+                                                  Fluttertoast.showToast(
+                                                      msg:
+                                                          'Surah ${detailsurah.nama_latin} Ayat ${ayat.nomor} tersimpan');
+                                                },
                                               ),
                                               IconButton(
                                                 icon: Icon(

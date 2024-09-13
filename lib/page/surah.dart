@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:quransinar/bloc/cubit/surah/list_surah/surah_cubit.dart';
 import 'package:quransinar/constant/colors.dart';
 
@@ -39,20 +40,20 @@ class _SurahPageState extends State<SurahPage> {
                           color: Colors.black, fontSize: 18)),
                   subtitle: Text(surahList[index].tempat_turun!,
                       style: TextStyle(color: secondaryColor, fontSize: 16)),
-                  leading: ClipPath(
-                    clipper: StarClipper(7),
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      width: 50,
-                      height: 50,
-                      color: Colors.purple.shade300,
-                      child: Center(
-                          child: Text(
-                        index.toString(),
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 16),
-                      )),
-                    ),
+                  leading: Container(
+                    padding: const EdgeInsets.all(8),
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                      HexColor('DF98FA'),
+                      HexColor('9055FF'),
+                    ])),
+                    child: Center(
+                        child: Text(
+                      index.toString(),
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                    )),
                   ),
                 );
               },

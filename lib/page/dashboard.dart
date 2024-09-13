@@ -1,6 +1,4 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:quransinar/constant/colors.dart';
 import 'package:quransinar/page/ayat.dart';
 import 'package:quransinar/page/doa.dart';
 

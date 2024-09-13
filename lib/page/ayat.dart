@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:quransinar/bloc/cubit/home/home_cubit.dart';
 import 'package:quransinar/bloc/cubit/surah/list_surah/surah_cubit.dart';
 import 'package:quransinar/constant/colors.dart';
+import 'package:quransinar/model/doa.dart';
+import 'package:quransinar/page/doa.dart';
 import 'package:quransinar/page/surah.dart';
 
 class AyatPage extends StatefulWidget {
@@ -150,21 +153,29 @@ class _AyatPageState extends State<AyatPage>
                               const SizedBox(
                                 height: 10,
                               ),
-                              Text(
-                                'Alfatiah',
-                                style: GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                              BlocBuilder<HomeSurah, String>(
+                                builder: (context, state) {
+                                  return Text(
+                                    state,
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  );
+                                },
                               ),
-                              Text(
-                                'Ayat no : 1',
-                                style: GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w200),
-                                ),
+                              BlocBuilder<HomeAyat, String>(
+                                builder: (context, state) {
+                                  return Text(
+                                    'Ayat no : $state',
+                                    style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w200),
+                                    ),
+                                  );
+                                },
                               ),
                             ],
                           ),
@@ -189,7 +200,6 @@ class _AyatPageState extends State<AyatPage>
             tabs: const [
               Tab(text: 'Surah Al-Quran'),
               Tab(text: 'Doa Sehari Hari'),
-              Tab(text: 'Hadist'),
             ],
           ),
           SizedBox(
@@ -198,8 +208,7 @@ class _AyatPageState extends State<AyatPage>
               controller: _tabController,
               children: const [
                 SurahPage(),
-                SurahPage(),
-                SurahPage(),
+                DoaPage(),
               ],
             ),
           ),

@@ -20,7 +20,7 @@ mixin _$DoaState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Doa detailsurah) success,
+    required TResult Function(List<Doa> detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$DoaState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Doa detailsurah)? success,
+    TResult? Function(List<Doa> detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$DoaState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Doa detailsurah)? success,
+    TResult Function(List<Doa> detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) =>
@@ -125,7 +125,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Doa detailsurah) success,
+    required TResult Function(List<Doa> detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) {
     return initial();
@@ -136,7 +136,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Doa detailsurah)? success,
+    TResult? Function(List<Doa> detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) {
     return initial?.call();
@@ -147,7 +147,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Doa detailsurah)? success,
+    TResult Function(List<Doa> detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -239,7 +239,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Doa detailsurah) success,
+    required TResult Function(List<Doa> detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) {
     return loading();
@@ -250,7 +250,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Doa detailsurah)? success,
+    TResult? Function(List<Doa> detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) {
     return loading?.call();
@@ -261,7 +261,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Doa detailsurah)? success,
+    TResult Function(List<Doa> detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -319,9 +319,7 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Doa detailsurah});
-
-  $DoaCopyWith<$Res> get detailsurah;
+  $Res call({List<Doa> detailsurah});
 }
 
 /// @nodoc
@@ -339,28 +337,25 @@ class __$$SuccessImplCopyWithImpl<$Res>
   }) {
     return _then(_$SuccessImpl(
       null == detailsurah
-          ? _value.detailsurah
+          ? _value._detailsurah
           : detailsurah // ignore: cast_nullable_to_non_nullable
-              as Doa,
+              as List<Doa>,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DoaCopyWith<$Res> get detailsurah {
-    return $DoaCopyWith<$Res>(_value.detailsurah, (value) {
-      return _then(_value.copyWith(detailsurah: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.detailsurah);
+  const _$SuccessImpl(final List<Doa> detailsurah) : _detailsurah = detailsurah;
 
+  final List<Doa> _detailsurah;
   @override
-  final Doa detailsurah;
+  List<Doa> get detailsurah {
+    if (_detailsurah is EqualUnmodifiableListView) return _detailsurah;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_detailsurah);
+  }
 
   @override
   String toString() {
@@ -372,12 +367,13 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            (identical(other.detailsurah, detailsurah) ||
-                other.detailsurah == detailsurah));
+            const DeepCollectionEquality()
+                .equals(other._detailsurah, _detailsurah));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, detailsurah);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_detailsurah));
 
   @JsonKey(ignore: true)
   @override
@@ -390,7 +386,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Doa detailsurah) success,
+    required TResult Function(List<Doa> detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) {
     return success(detailsurah);
@@ -401,7 +397,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Doa detailsurah)? success,
+    TResult? Function(List<Doa> detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) {
     return success?.call(detailsurah);
@@ -412,7 +408,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Doa detailsurah)? success,
+    TResult Function(List<Doa> detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -461,9 +457,9 @@ class _$SuccessImpl implements _Success {
 }
 
 abstract class _Success implements DoaState {
-  const factory _Success(final Doa detailsurah) = _$SuccessImpl;
+  const factory _Success(final List<Doa> detailsurah) = _$SuccessImpl;
 
-  Doa get detailsurah;
+  List<Doa> get detailsurah;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -536,7 +532,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(Doa detailsurah) success,
+    required TResult Function(List<Doa> detailsurah) success,
     required TResult Function(String errorMessage) error,
   }) {
     return error(errorMessage);
@@ -547,7 +543,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(Doa detailsurah)? success,
+    TResult? Function(List<Doa> detailsurah)? success,
     TResult? Function(String errorMessage)? error,
   }) {
     return error?.call(errorMessage);
@@ -558,7 +554,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(Doa detailsurah)? success,
+    TResult Function(List<Doa> detailsurah)? success,
     TResult Function(String errorMessage)? error,
     required TResult orElse(),
   }) {
