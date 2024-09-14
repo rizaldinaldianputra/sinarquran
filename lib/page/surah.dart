@@ -17,51 +17,50 @@ class SurahPage extends StatefulWidget {
 class _SurahPageState extends State<SurahPage> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: BlocBuilder<SurahCubit, SurahState>(
-        builder: (context, state) {
-          return state.when(
-            initial: () => const Center(child: Text('Load Data')),
-            loading: () => const Center(child: CircularProgressIndicator()),
-            success: (surahList) => ListView.builder(
-              itemCount: surahList.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  onTap: () {
-                    context.goNamed("detailayat", queryParameters: {
-                      'idayat': surahList[index].nomor.toString()
-                    });
-                  },
-                  trailing: Text(surahList[index].nama!,
-                      style: TextStyle(color: secondaryColor, fontSize: 20)),
-                  title: Text(
-                      '${surahList[index].nama_latin} (${surahList[index].jumlah_ayat})',
-                      style: GoogleFonts.poppins(
-                          color: Colors.black, fontSize: 18)),
-                  subtitle: Text(surahList[index].tempat_turun!,
-                      style: TextStyle(color: secondaryColor, fontSize: 16)),
-                  leading: Container(
-                    padding: const EdgeInsets.all(8),
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [
-                      HexColor('DF98FA'),
-                      HexColor('9055FF'),
-                    ])),
-                    child: Center(
-                        child: Text(
-                      index.toString(),
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
-                    )),
-                  ),
-                );
-              },
-            ),
-            error: (message) => Center(child: Text(message)),
-          );
-        },
-      ),
+    return BlocBuilder<SurahCubit, SurahState>(
+      builder: (context, state) {
+        return state.when(
+          initial: () => const Center(child: Text('Load Data')),
+          loading: () => const Center(child: CircularProgressIndicator()),
+          success: (surahList) => ListView.builder(
+            shrinkWrap: true,
+            itemCount: surahList.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                onTap: () {
+                  context.goNamed("detailayat", queryParameters: {
+                    'idayat': surahList[index].nomor.toString()
+                  });
+                },
+                trailing: Text(surahList[index].nama!,
+                    style: TextStyle(color: secondaryColor, fontSize: 20)),
+                title: Text(
+                    '${surahList[index].nama_latin} (${surahList[index].jumlah_ayat})',
+                    style:
+                        GoogleFonts.poppins(color: Colors.black, fontSize: 18)),
+                subtitle: Text(surahList[index].tempat_turun!,
+                    style: TextStyle(color: secondaryColor, fontSize: 16)),
+                leading: Container(
+                  padding: const EdgeInsets.all(8),
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                    HexColor('DF98FA'),
+                    HexColor('9055FF'),
+                  ])),
+                  child: Center(
+                      child: Text(
+                    index.toString(),
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                  )),
+                ),
+              );
+            },
+          ),
+          error: (message) => Center(child: Text(message)),
+        );
+      },
     );
   }
 }

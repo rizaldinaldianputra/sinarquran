@@ -21,22 +21,21 @@ GoRouter router = GoRouter(
             },
             routes: <RouteBase>[
               GoRoute(
+                name: 'detailayat',
+                path: 'detailayat',
+                builder: (BuildContext context, GoRouterState state) {
+                  return DetailAyat(
+                    idayat: state.uri.queryParameters['idayat']!,
+                  );
+                },
+              ),
+              GoRoute(
                   name: 'searchayat',
                   path: 'searchayat',
                   builder: (BuildContext context, GoRouterState state) {
                     return const SearchAyatPage();
                   },
-                  routes: <RouteBase>[
-                    GoRoute(
-                      name: 'detailayat',
-                      path: 'detailayat',
-                      builder: (BuildContext context, GoRouterState state) {
-                        return DetailAyat(
-                          idayat: state.uri.queryParameters['idayat']!,
-                        );
-                      },
-                    ),
-                  ]),
+                  routes: const <RouteBase>[]),
             ]),
       ],
     ),

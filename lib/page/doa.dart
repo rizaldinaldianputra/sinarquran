@@ -28,96 +28,95 @@ class _DoaPageState extends State<DoaPage> {
     return BlocBuilder<DoaCubit, DoaState>(
       builder: (context, state) {
         return state.when(success: (List<Doa> data) {
-          return Expanded(
-            child: ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (BuildContext context, int index) {
-                final doa = data[index];
-                return Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              gradient: LinearGradient(
-                                colors: [
-                                  HexColor('DF98FA'),
-                                  HexColor('9055FF'),
-                                ],
-                              ),
+          return ListView.builder(
+            shrinkWrap: true,
+            itemCount: data.length,
+            itemBuilder: (BuildContext context, int index) {
+              final doa = data[index];
+              return Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            gradient: LinearGradient(
+                              colors: [
+                                HexColor('DF98FA'),
+                                HexColor('9055FF'),
+                              ],
                             ),
-                            child: Center(
-                              child: Text(
-                                doa.id.toString(),
-                                style: GoogleFonts.poppins(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              doa.id.toString(),
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
                               ),
                             ),
                           ),
-                          Text(
-                            doa.judul,
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          doa.arab,
+                        ),
+                        Text(
+                          doa.judul,
                           style: GoogleFonts.poppins(
-                            fontSize: 20,
-                            fontWeight: FontWeight.normal,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          doa.latin,
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.black,
-                          ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        doa.arab,
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black,
                         ),
                       ),
-                      const Divider(),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          doa.terjemah,
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.grey,
-                          ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        doa.latin,
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black,
                         ),
                       ),
-                    ],
-                  ),
-                );
-              },
-            ),
+                    ),
+                    const Divider(),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        doa.terjemah,
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
           );
         }, initial: () {
           return const Center(
